@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\AdminTaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +23,16 @@ Route::get('/', function () {
 Route::get('registreren', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 
-Route::get('inloggen', [SessionsController::class, 'create'])->middleware('guest');
-Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
+Route::get('login', [SessionController::class, 'create'])->middleware('guest');
+Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 
-Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
+Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
+
+
+// Admin
+Route::post('admin/tasks', [AdminTaskController::class, 'store'])->middleware('auth');
+Route::get('admin/tasks/create', [AdminTaskController::class, 'create'])->middleware('auth');
+Route::get('admin', [AdminTaskController::class, 'index'])->middleware('auth');
+Route::get('admin/tasks/{task}/edit', [AdminTaskController::class, 'edit'])->middleware('auth');
+Route::patch('admin/tasks/{task}', [AdminTaskController::class, 'update'])->middleware('auth');
+Route::delete('admin/tasks/{task}', [AdminTaskController::class, 'destroy'])->middleware('auth');

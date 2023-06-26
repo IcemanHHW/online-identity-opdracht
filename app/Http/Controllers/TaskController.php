@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    public function index() {
+    public function index()
+    {
+        $user_id = auth()->id();
         return view('welcome', [
-            'tasks' => Task::where('user_id', '=', auth()->user()->id)->get()
+            'tasks' => Task::where('user_id', $user_id)->get()
         ]);
     }
 }

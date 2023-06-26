@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('title', 'Registreren')
+@section('title', 'Inloggen')
 
 @section('content')
 
@@ -11,15 +11,15 @@
 
         <div class="field is-horizontal">
             <div class="field-label is-normal">
-                <label class="label">Gebruikersnaam</label>
+                <label class="label has-text-white">Email</label>
             </div>
             <div class="field-body">
                 <div class="field">
                     <div class="control">
-                        <input class="input" type="text" id="username" name="username" value="{{ old('username') }}"
+                        <input class="input" type="email" id="email" name="email" value="{{ old('email') }}"
                             required>
                     </div>
-                    @error('username')
+                    @error('email')
                         <p class="help is-danger">{{ $message }}</p>
                     @enderror
                 </div>
@@ -28,7 +28,7 @@
 
         <div class="field is-horizontal">
             <div class="field-label is-normal">
-                <label class="label">Wachtwoord</label>
+                <label class="label has-text-white">Wachtwoord</label>
             </div>
             <div class="field-body">
                 <div class="field">

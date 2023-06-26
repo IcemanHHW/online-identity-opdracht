@@ -11,7 +11,7 @@
 
         <div class="field is-horizontal">
             <div class="field-label is-normal">
-                <label class="label">Gebruikersnaam</label>
+                <label class="label has-text-white">Gebruikersnaam</label>
             </div>
             <div class="field-body">
                 <div class="field">
@@ -28,7 +28,7 @@
 
         <div class="field is-horizontal">
             <div class="field-label is-normal">
-                <label class="label">Email</label>
+                <label class="label has-text-white">Email</label>
             </div>
             <div class="field-body">
                 <div class="field">
@@ -45,7 +45,7 @@
 
         <div class="field is-horizontal">
             <div class="field-label is-normal">
-                <label class="label">Wachtwoord</label>
+                <label class="label has-text-white">Wachtwoord</label>
             </div>
             <div class="field-body">
                 <div class="field">

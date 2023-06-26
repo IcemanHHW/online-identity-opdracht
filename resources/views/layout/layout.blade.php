@@ -9,7 +9,9 @@
     <title>Taken Lijst - @yield('title')</title>
 </head>
 
-<body>
+<body class="has-background-dark has-navbar-fixed-top">
+    @include('components.navbar')
+
     <section class="section">
         @if (session()->has('success'))
             <div class="notification is-info">

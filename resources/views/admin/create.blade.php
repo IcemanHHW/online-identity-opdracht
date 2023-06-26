@@ -10,7 +10,7 @@
         @csrf
 
         <div class="field">
-            <label class="label">Titel</label>
+            <label class="label has-text-white">Titel</label>
             <div class="control">
                 <input class="input" type="text" id="title" name="title" required>
             </div>
@@ -20,7 +20,7 @@
         </div>
 
         <div class="field">
-            <label class="label">Taak beschrijving</label>
+            <label class="label has-text-white">Taak beschrijving</label>
             <div class="control">
                 <textarea class="textarea" id="body" name="body" required></textarea>
             </div>

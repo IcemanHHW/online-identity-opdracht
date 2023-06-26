@@ -13,13 +13,13 @@ class SessionController extends Controller
 
     public function store() {
         $attributes = request()->validate([
-            'username' => 'required|username',
+            'email' => 'required|email',
             'password' => 'required'
         ]);
 
         if (! auth()->attempt($attributes)) {
             throw ValidationException::withMessages([
-                'username' => 'Je gebruikersnaam of wachtwoord is incorrect'
+                'email' => 'Je gebruikersnaam of wachtwoord is incorrect'
             ]);
         }
 

@@ -34,3 +34,4 @@ Route::get('admin/tasks/create', [AdminTaskController::class, 'create'])->middle
 Route::get('admin/tasks/{task}/edit', [AdminTaskController::class, 'edit'])->middleware('auth');
 Route::patch('admin/tasks/{task}', [AdminTaskController::class, 'update'])->middleware('auth');
 Route::delete('admin/tasks/{task}', [AdminTaskController::class, 'destroy'])->middleware('auth');
+Route::patch('admin/tasks/{task}/complete', [AdminTaskController::class, 'complete'])->middleware('auth');

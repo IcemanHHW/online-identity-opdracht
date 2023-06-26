@@ -9,7 +9,7 @@ class TaskController extends Controller
 {
     public function index() {
         return view('welcome', [
-            'tasks' => Task::all()->where('user_id', auth()->user()->id)
+            'tasks' => Task::where('user_id', '=', auth()->user()->id)->get()
         ]);
     }
 }

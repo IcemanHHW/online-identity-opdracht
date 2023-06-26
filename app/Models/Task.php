@@ -14,6 +14,10 @@ class Task extends Model
 
     protected $with = ['author'];
 
+    protected $casts = [
+        'is_complete' => 'boolean',
+    ];
+
     public function author() {
         return $this->belongsTo(User::class, 'user_id');
     }

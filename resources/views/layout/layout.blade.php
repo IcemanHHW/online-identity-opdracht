@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"  class="has-background-dark has-navbar-fixed-top">
 
 <head>
     <meta charset="utf-8">
@@ -9,7 +9,7 @@
     <title>Taken Lijst - @yield('title')</title>
 </head>
 
-<body class="has-background-dark has-navbar-fixed-top">
+<body>
     @include('components.navbar')
 
     <section class="section">

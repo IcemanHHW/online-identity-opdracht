@@ -39,6 +39,13 @@ class AdminTaskController extends Controller
         return back()->with('success', 'Taak verwijderd!');
     }
 
+    public function complete(Task $task) {
+        $task->is_complete = true;
+        $task->save();
+
+        return back()->with('success', 'Taak voltooid!');
+    }
+
     protected function validateTask(?Task $task = null): array
     {
         $task ??= new task();

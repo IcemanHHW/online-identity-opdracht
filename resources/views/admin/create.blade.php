@@ -22,7 +22,7 @@
         <div class="field">
             <label class="label has-text-white">Taak beschrijving</label>
             <div class="control">
-                <textarea class="textarea" id="body" name="body" required></textarea>
+                <textarea class="textarea" id="body" name="body"></textarea>
             </div>
             @error('body')
                 <p class="help is-danger">{{ $message }}</p>

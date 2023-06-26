@@ -11,7 +11,7 @@ class TaskController extends Controller
     {
         $user_id = auth()->id();
         return view('welcome', [
-            'tasks' => Task::where('user_id', $user_id)->get()
+            'tasks' => Task::where('user_id', $user_id)->latest()->get()
         ]);
     }
 }

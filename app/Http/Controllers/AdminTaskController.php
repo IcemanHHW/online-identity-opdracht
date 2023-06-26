@@ -15,6 +15,7 @@ class AdminTaskController extends Controller
     public function store() {
         Task::create(array_merge($this->validateTask(), [
             'user_id' => request()->user()->id,
+            'is_complete' => false,
         ]));
 
         return redirect('/');
@@ -52,7 +53,7 @@ class AdminTaskController extends Controller
 
         return request()->validate([
             'title' => 'required',
-            'body' => 'required',
+            'body' => 'nullable',
         ]);
     }
 }

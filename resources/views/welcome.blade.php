@@ -15,9 +15,11 @@
                                 @else
                                     <p class="card-header-title">{{ $task->title }}</p>
                                 @endif
+                                <span
+                                    class="card-header-title has-text-weight-light has-text-right"><time><time>{{ $task->created_at->format('d-m-Y H:i') }}</time></time></span>
                             </div>
-                            <div class="card-content">
-                                @if ($task->body)
+                            @if ($task->body)
+                                <div class="card-content">
                                     <div class="content">
                                         @if ($task->is_complete)
                                             <s>{!! $task->body !!}</s>
@@ -25,21 +27,21 @@
                                             {!! $task->body !!}
                                         @endif
                                     </div>
-                                @endif
-                            </div>
+                                </div>
+                            @endif
                             <footer class="card-footer">
                                 @if ($task->is_complete == false)
-                                <span class="card-footer-item">
-                                    <form method="POST" action="/admin/tasks/{{ $task->id }}/complete">
-                                        @csrf
-                                        @method('PATCH')
+                                    <span class="card-footer-item">
+                                        <form method="POST" action="/admin/tasks/{{ $task->id }}/complete">
+                                            @csrf
+                                            @method('PATCH')
 
-                                        <button class="button is-success">Voltooid</button>
-                                    </form>
-                                </span>
-                                <span class="card-footer-item"><a href="/admin/tasks/{{ $task->id }}/edit"
-                                        class="button is-warning">Aanpassen</a>
-                                </span>
+                                            <button class="button is-success">Voltooid</button>
+                                        </form>
+                                    </span>
+                                    <span class="card-footer-item"><a href="/admin/tasks/{{ $task->id }}/edit"
+                                            class="button is-warning">Aanpassen</a>
+                                    </span>
                                 @endif
                                 <span class="card-footer-item">
                                     <form method="POST" action="/admin/tasks/{{ $task->id }}">

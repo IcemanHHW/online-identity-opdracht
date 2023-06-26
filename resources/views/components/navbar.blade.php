@@ -1,6 +1,6 @@
 <nav class="navbar is-white is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="localhost">
+        <a class="navbar-item" href="/">
             <img src="https://icons.veryicon.com/png/o/miscellaneous/standard/task-32.png" width="56" height="56">
         </a>
 

@@ -20,14 +20,14 @@
                                 @endif
                             </div>
                             <footer class="card-footer">
-                                <a href="#" class="card-footer-item">Voltooid</a>
-                                <a href="/admin/tasks/{{ $task->id }}/edit" class="card-footer-item">Aanpassen</a>
+                                <span class="card-footer-item"><a class="button is-success" href="#">Voltooid</a></span>
+                                <span class="card-footer-item"><a href="/admin/tasks/{{ $task->id }}/edit" class="button is-warning">Aanpassen</a></span>
                                 <span class="card-footer-item">
                                     <form method="POST" action="/admin/tasks/{{ $task->id }}">
                                         @csrf
                                         @method('DELETE')
 
-                                        <button>Verwijderen</button>
+                                        <button class="button is-danger">Verwijderen</button>
                                     </form>
                                 </span>
                             </footer>

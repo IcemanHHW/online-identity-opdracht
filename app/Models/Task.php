@@ -15,6 +15,6 @@ class Task extends Model
     protected $with = ['author'];
 
     public function author() {
-        $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

@@ -6,7 +6,7 @@
 
     <h1 class="title">{{ $task->title }} bewerken</h1>
 
-    <form method="POST" action="/admin/tasks/{{ $tasks->id }}" enctype="multipart/form-data">
+    <form method="POST" action="/admin/tasks/{{ $task->id }}" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
 
@@ -32,7 +32,7 @@
 
         <div class="field">
             <div class="control">
-                <button type="submit" class="button is-link">Aanmaken</button>
+                <button type="submit" class="button is-link">Bewerken</button>
             </div>
         </div>
     </form>
